@@ -23,7 +23,7 @@ cuantoRestar=0
 #(Limit was chosen by the teacher)
 while Bucle:
     cuantoRestar=0
-    guardSum=[0]*10
+    guardSum=[0]*22
     valid=True
     correct=True
     try:
@@ -38,6 +38,7 @@ while Bucle:
                     mat[i][j]=int(input("Write a number. Sudoku bro "))
         except ValueError:
             print("Only numbers are allowed, please start again.")
+            correct=False
         #print("ROW "+str(i)+" Completed whit values:"+str(mat))
         if correct==True:
             #Filas
@@ -61,6 +62,14 @@ while Bucle:
                 print("THIS IS A MAGIC MATRIX WHAAAAAAAAAAAAAAAAAAAAAAAT!!!!!!!!")
             else:
                 print("THIS ISNT MAGIC LOL BRO HAHA L + NOOB + RATIO + EZ")
+            #Original Matrix
+            print("Matriz Original: ")
+            for i in range(0,dims):
+                for j in range(0,dims):
+                    print(mat[i][j],end=" ")
+                print("")
+            print("RESULTADOS:")
+            #Results
             print("Las sumas son: ")
             print("Filas: ",end="")
             for i in range(0, dims):
@@ -70,9 +79,7 @@ while Bucle:
                 print(str(guardSum[i]),end=", ")
             print("\nPrimer diagonal: "+ str(guardSum[dims*2]))
             print("Segunda diagonal: "+ str(guardSum[dims*2+1]))
-            #print(guardSum)
+
     elif dims>10:
         print("WTF BRO? I TOLD YOU THAT THE LIMIT IS TEN, WRITE IT AGAIN.")
-
-
 
